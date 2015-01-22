@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150122151847) do
+ActiveRecord::Schema.define(version: 20150122152613) do
 
   create_table "atricles", force: true do |t|
     t.integer  "page_id"
@@ -31,6 +31,15 @@ ActiveRecord::Schema.define(version: 20150122151847) do
     t.string   "name"
     t.integer  "position"
     t.boolean  "visible",    default: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "galleries", force: true do |t|
+    t.string   "name"
+    t.integer  "position"
+    t.text     "description"
+    t.boolean  "visible",     default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
