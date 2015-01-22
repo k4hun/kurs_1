@@ -1,5 +1,6 @@
-%h1 Categories#index
-%p= link_to("Add new category", "#")
+%h1 Categories
+%h2= flash[:alert]
+%p= link_to("Add new category", { :action => "new" })
 %p= "Category count: #{@categories.size}"
 
 %table
@@ -14,9 +15,9 @@
       %td= category.position
       %td= category.name
       %td= category.visible ? "Yes" : "No"
-      %td= category.pages
+      %td= category.pages.count
       %td
-        =link_to("Show", "#")
-        =link_to("Edit", "#")
-        =link_to("Destroy", "#")
+        =link_to("Show", {:action => "show", :id => category.id})
+        =link_to("Edit", {:action => "edit", :id => category.id})
+        =link_to("Destroy", {:action => "destroy", :id => category.id})
 

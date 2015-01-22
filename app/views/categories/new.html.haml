@@ -1,2 +1,7 @@
-%h1 Categories#new
-%p Find me in app/views/categories/new.html.haml
+%h1 New category
+%p= link_to("Back", { :action => "index" })
+
+= form_for(:category, :url => { :action => "create" }) do |f| 
+  = render(:partial => 'form', :locals => {:f => f})
+  =f.submit(:Create)
+

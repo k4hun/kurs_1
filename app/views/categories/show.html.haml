@@ -1,2 +1,20 @@
-%h1 Categories#show
-%p Find me in app/views/categories/show.html.haml
+%h1= @category.name
+
+%p= link_to("Back", { :action => "index" })
+
+%table
+  %tr
+    %th Name
+    %td= @category.name
+  %tr
+    %th Position
+    %td= @category.position
+  %tr
+    %th Is visible
+    %td= @category.visible ? "Yes" : "No"
+  %tr
+    %th Created at
+    %td= @category.created_at
+  %tr
+    %th Updated at
+    %td= @category.updated_at

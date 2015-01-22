@@ -1,2 +1,6 @@
-%h1 Categories#edit
-%p Find me in app/views/categories/edit.html.haml
+%h1= @category.name
+%p= link_to("Back", { :action => "index" })
+
+= form_for(:category, :url => { :action => "update", :id => @category.id }) do |f| 
+  = render(:partial => 'form', :locals => {:f => f})
+  = f.submit(:Update)

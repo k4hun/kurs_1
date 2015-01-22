@@ -1,0 +1,10 @@
+%table
+  %tr
+    %td= f.label(:name)
+    %td= f.text_field(:name)
+  %tr
+    %td= f.label(:position)
+    %td= f.select(:position, 1..@counter)
+  %tr
+    %td= f.label(:is_visible)
+    %td= f.check_box(:visible)
