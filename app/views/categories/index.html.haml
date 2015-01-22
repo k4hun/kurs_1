@@ -1,0 +1,22 @@
+%h1 Categories#index
+%p= link_to("Add new category", "#")
+%p= "Category count: #{@categories.size}"
+
+%table
+  %tr
+    %th Position
+    %th Name
+    %th Visible
+    %th Pages
+    %th Actions
+  - @categories.each do |category|
+    %tr
+      %td= category.position
+      %td= category.name
+      %td= category.visible ? "Yes" : "No"
+      %td= category.pages
+      %td
+        =link_to("Show", "#")
+        =link_to("Edit", "#")
+        =link_to("Destroy", "#")
+
