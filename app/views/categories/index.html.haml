@@ -1,23 +1,24 @@
-%h1 Categories
-%h2= flash[:alert]
-%p= link_to("Add new category", { :action => "new" })
-%p= "Category count: #{@categories.size}"
+.hero-unit
+  %h1 Categories
+  %h2= flash[:alert]
+  %p= link_to("Add new category", { :action => "new" }, :class => 'btn btn-mini btn-primary')
+  %p{:style => "text-align: right;"}= "Category count: #{@categories.size}"
 
-%table
-  %tr
-    %th Position
-    %th Name
-    %th Visible
-    %th Pages
-    %th Actions
-  - @categories.each do |category|
-    %tr
-      %td= category.position
-      %td= category.name
-      %td= category.visible ? "Yes" : "No"
-      %td= category.pages.count
-      %td
-        =link_to("Show", {:action => "show", :id => category.id})
-        =link_to("Edit", {:action => "edit", :id => category.id})
-        =link_to("Destroy", {:action => "destroy", :id => category.id})
+  %table.table.table-striped
+    %tr.info
+      %th Position
+      %th Name
+      %th Visible
+      %th Pages
+      %th Actions
+    - @categories.each do |category|
+      %tr
+        %td= category.position
+        %td= category.name
+        %td.center= category.visible ? "Yes" : "No"
+        %td.center= category.pages.count
+        %td
+          =link_to("Show", {:action => "show", :id => category.id}, :class => 'btn btn-xs btn-default')
+          =link_to("Edit", {:action => "edit", :id => category.id}, :class => 'btn btn-xs btn-primary')
+          =link_to("Destroy", {:action => "destroy", :id => category.id}, :class => 'btn btn-xs btn-danger')
 
