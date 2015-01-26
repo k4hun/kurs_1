@@ -1,6 +1,5 @@
 .hero-unit
   %h1 Categories
-  %h2= flash[:alert]
   %p= link_to("Add new category", { :action => "new" }, :class => 'btn btn-mini btn-primary')
   %p{:style => "text-align: right;"}= "Category count: #{@categories.size}"
 
@@ -15,7 +14,7 @@
       %tr
         %td= category.position
         %td= category.name
-        %td.center= category.visible ? "Yes" : "No"
+        %td.center= visible_status(category.visible)
         %td.center= category.pages.count
         %td
           =link_to("Show", {:action => "show", :id => category.id}, :class => 'btn btn-xs btn-default')

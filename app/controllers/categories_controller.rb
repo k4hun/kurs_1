@@ -23,6 +23,7 @@ class CategoriesController < ApplicationController
   def update
     if current_category.update_attributes(category_params)
       redirect_to(:action => 'show', :id => current_category.id)
+      flash[:notice] = "Category updated!"
     else
       render('edit')
     end
@@ -31,14 +32,14 @@ class CategoriesController < ApplicationController
   def destroy
     current_category.destroy
     redirect_to(:action => 'index')
-    flash[:alert] = "Category destroyed!"
+    flash[:notice] = "Category destroyed!"
   end
 
   def create
     @categories = Category.new(category_params)
     if @categories.save
       redirect_to( :action => 'index' )
-      flash[:alert] = "Category created!"
+      flash[:notice] = "Category created!"
     else
       #counter = Category.count + 1
       render('new')
