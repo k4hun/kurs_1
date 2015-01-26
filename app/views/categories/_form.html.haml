@@ -1,10 +1,10 @@
-%table
+%table.table.striped
   %tr
     %td= f.label(:name)
-    %td= f.text_field(:name)
+    %td= f.text_field(:name, :class => 'form-control')
   %tr
     %td= f.label(:position)
-    %td= f.select(:position, 1..@counter)
+    %td= f.select(:position, 1..@counter, :class => 'form-control')
   %tr
     %td= f.label(:is_visible)
     %td= f.check_box(:visible)

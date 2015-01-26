@@ -1,6 +1,7 @@
-%h1= @category.name
-%p= link_to("Back", { :action => "index" })
-
-= form_for(:category, :url => { :action => "update", :id => @category.id }) do |f| 
-  = render(:partial => 'form', :locals => {:f => f})
-  = f.submit(:Update)
+.hero-unit
+  %h1= @category.name
+  = form_for(:category, :url => { :action => "update", :id => @category.id }) do |f| 
+    = render(:partial => 'form', :locals => {:f => f})
+    %p{:style => 'text-align: center;'}
+      = f.submit(:Update, :class => 'btn btn-primary')
+      = link_to("Back", { :action => "index" }, :class => 'btn btn-warning')
