@@ -1,0 +1,25 @@
+.hero-unit
+  %h1 Pages
+  %p= link_to("Add new page", { :action => "new" }, :class => 'btn btn-mini btn-primary')
+  %p{:style => "text-align: right;"}= "Page count: #{@pages.size}"
+
+  %table.table.table-striped
+    %tr.info
+      %th Position
+      %th Name
+      %th Visible
+      %th Articles
+      %th Category
+      %th Actions
+    - @pages.each do |page|
+      %tr
+        %td= page.position
+        %td= page.name
+        %td.center= visible_status(page.visible)
+        %td.center= page.articles.size
+        %td= page.category.name
+        %td
+          =link_to("Show", {:action => "show", :id => page.id}, :class => 'btn btn-xs btn-default')
+          =link_to("Edit", {:action => "edit", :id => page.id}, :class => 'btn btn-xs btn-primary')
+          =link_to("Destroy", {:action => "destroy", :id => page.id}, :class => 'btn btn-xs btn-danger')
+

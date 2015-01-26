@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150122153022) do
 
-  create_table "atricles", force: true do |t|
+  create_table "articles", force: true do |t|
     t.integer  "page_id"
     t.string   "name"
     t.integer  "position"

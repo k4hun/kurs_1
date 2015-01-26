@@ -1,6 +1,6 @@
-class CreateAtricles < ActiveRecord::Migration
-  def change
-    create_table :atricles do |t|
+class CreateArticles < ActiveRecord::Migration
+  def up
+    create_table :articles do |t|
       t.integer "page_id"
       t.string "name"
       t.integer "position"
@@ -10,4 +10,9 @@ class CreateAtricles < ActiveRecord::Migration
       t.timestamps
     end
   end
+
+  def down
+    drop_table :articles
+  end
+
 end
