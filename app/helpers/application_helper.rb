@@ -8,4 +8,8 @@ module ApplicationHelper
             content_tag(:span, options[:false], :class => 'glyphicon glyphicon-ban-circle')  
   end
 
+  def error(object)
+    render(:partial => 'addons/errors', :locals => {:object => object})    
+  end
+
 end

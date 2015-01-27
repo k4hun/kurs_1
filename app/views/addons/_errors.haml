@@ -1,0 +1,11 @@
+-if object && object.errors.size > 0
+  .bg.danger
+    %table.table
+      %tr.danger
+        %td= "Cannot save record to database, error count: #{object.errors.size}"
+        %br for fields:
+      = object.errors.full_messages.each do |n|
+        %tr.warning
+          %td
+            %b= n
+        

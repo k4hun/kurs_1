@@ -1,18 +1,20 @@
 Rails.application.routes.draw do
 
+  #resources 'pages'
+  #resources 'articles'
   get 'pages/index'
-
-  get 'pages/show'
-
   get 'pages/new'
-
   get 'pages/edit'
-
   get 'pages/destroy'
 
-root 'categories#index'
+  get 'articles/index'
+  get 'articles/new'
+  get 'articles/edit'
+  get 'articles/destroy'
 
-match ':controller(/:action(/:id))', :via => [:get, :post]
+  root 'categories#index'
+
+  match ':controller(/:action(/:id))', :via => [:get, :post]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

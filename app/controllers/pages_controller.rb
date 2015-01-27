@@ -34,6 +34,8 @@ class PagesController < ApplicationController
       redirect_to( :action => 'index' )
       flash[:notice] = "Page created!"
     else
+      @counter = Page.count + 1
+      @cat = Category.order('position ASC')
       render('new')
     end
   end

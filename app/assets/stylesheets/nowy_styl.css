@@ -131,6 +131,6 @@ footer {
 }
 
 /* ------ obsluga bledow  ------ */
-    .field_with_errors {}
-    .field_with_errors label { color: #FF0000;}
-    .field_with_errors input { border: 1px solid #FF0000;}
+.field_with_errors {}
+.field_with_errors label { color: #FF0000;}
+.field_with_errors input { border: 1px solid #FF0000;}
