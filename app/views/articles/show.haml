@@ -1,0 +1,29 @@
+.hero-unit 
+  %h1= @article.name
+
+  %table.table.striped
+    %tr
+      %th Name
+      %td= @article.name
+    %tr
+      %th Position
+      %td= @article.position
+    %tr
+      %th Category
+      %td= @article.page.name
+    %tr
+      %th Content
+      %td= @article.content
+    %tr
+      %th Is visible
+      %td= @article.visible ? "Yes" : "No"
+    %tr
+      %th Photo:
+      %td= image_tag(@article.photo)
+    %tr
+      %th Created at
+      %td= @article.created_at
+    %tr
+      %th Updated at
+      %td= @article.updated_at
+  %p{:style => 'text-align: center;'}= link_to("Back", { :action => "index" }, :class => 'btn btn-primary')

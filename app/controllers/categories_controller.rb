@@ -25,6 +25,7 @@ class CategoriesController < ApplicationController
       redirect_to(:action => 'show', :id => current_category.id)
       flash[:notice] = "Category updated!"
     else
+      edit
       render('edit')
     end
   end
@@ -41,7 +42,7 @@ class CategoriesController < ApplicationController
       redirect_to( :action => 'index' )
       flash[:notice] = "Category created!"
     else
-      #counter = Category.count + 1
+      new      
       render('new')
     end
   end

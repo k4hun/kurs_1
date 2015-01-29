@@ -1,0 +1,7 @@
+.hero-unit
+  %h1= @article.name
+  = form_for(:article, :url => { :action => "update", :id => @article.id }) do |f| 
+    = render(:partial => 'form', :locals => {:f => f})
+    %p{:style => 'text-align: center;'}
+      = f.submit(:Update, :class => 'btn btn-primary')
+      = link_to("Back", { :action => "index" }, :class => 'btn btn-warning')

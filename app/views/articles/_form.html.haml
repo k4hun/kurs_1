@@ -1,0 +1,25 @@
+= error(@article)
+
+%table.table  
+  %tr
+    %th= f.label(:page_id, 'Page')
+    %td= f.select(:page_id, @pag.map{|x| [x.name, x.id]}, :class => 'form-control')
+  %tr
+    %th= f.label(:name)
+    %td= f.text_field(:name, :class => 'form-control')
+  %tr
+    %th= f.label(:content)
+    %td= f.text_area(:content, :class => 'form-control')
+  %tr
+    %th= f.label(:position)
+    %td= f.select(:position, 1..@counter, :class => 'form-control')
+  %tr
+    %th= f.label(:is_visible)
+    %td= f.check_box(:visible)
+  -if !@article.photo.blank?
+    %tr
+      %th Photo:
+      %td= image_tag(@article.photo)
+  %tr
+    %th= f.label(:photo)
+    %td= f.file_field(:photo)

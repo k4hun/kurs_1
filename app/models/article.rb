@@ -1,6 +1,10 @@
 class Article < ActiveRecord::Base
   belongs_to :page
 
+  validates   :name, 
+              :presence => true, 
+              :length => {:maximum => 120, :message => "Name to long"}
+
   has_attached_file :photo, :styles => { :medium => "600x600>", :thumb => "200x200>" }                    
   validates_attachment_content_type :photo, 
                                     :content_type => /^image\/(png|gif|jpeg)/, 
