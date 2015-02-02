@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
-  #resources 'pages'
-  #resources 'articles'
+  get 'admin', :to => "access#index"
+
+  #resources 'pages'  
   get 'pages/index'
   get 'pages/new'
   get 'pages/edit'
   get 'pages/destroy'
 
+  #resources 'articles'
   get 'articles/index'
   get 'articles/new'
   get 'articles/edit'
