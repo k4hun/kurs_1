@@ -1,0 +1,23 @@
+.hero-unit 
+  %h1= @gallery.name
+
+  %table.table.striped
+    %tr
+      %th Name
+      %td= @gallery.name
+    %tr
+      %th Position
+      %td= @gallery.position
+    %tr
+      %th Description
+      %td= @gallery.description
+    %tr
+      %th Is visible
+      %td= @gallery.visible ? "Yes" : "No"
+    %tr
+      %th Created at
+      %td= @gallery.created_at
+    %tr
+      %th Updated at
+      %td= @gallery.updated_at
+  %p{:style => 'text-align: center;'}= link_to("Back", { :action => "index" }, :class => 'btn btn-primary')

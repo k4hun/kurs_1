@@ -1,0 +1,21 @@
+.hero-unit
+  %h1 Galleries
+  %p= link_to("Add new Gallery", { :action => "new" }, :class => 'btn btn-mini btn-primary')
+  %p{:style => "text-align: right;"}= "Gallery count: #{@galleries.count}"
+
+  %table.table.table-striped
+    %tr.info
+      %th Position
+      %th Name
+      %th Visible 
+      %th Actions
+    - @galleries.each do |gallery|
+      %tr
+        %td= gallery.position
+        %td= gallery.name
+        %td.center= visible_status(gallery.visible)
+        %td
+          =link_to("Show", {:action => "show", :id => gallery.id}, :class => 'btn btn-xs btn-default')
+          =link_to("Edit", {:action => "edit", :id => gallery.id}, :class => 'btn btn-xs btn-primary')
+          =link_to("Destroy", {:action => "destroy", :id => gallery.id}, :class => 'btn btn-xs btn-danger')
+

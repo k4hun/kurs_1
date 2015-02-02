@@ -1,0 +1,7 @@
+.hero-unit
+  %h1= @gallery.name
+  = form_for(:gallery, :url => { :action => "update", :id => @gallery.id }) do |f| 
+    = render(:partial => 'form', :locals => {:f => f})
+    %p{:style => 'text-align: center;'}
+      = f.submit(:Update, :class => 'btn btn-primary')
+      = link_to("Back", { :action => "index" }, :class => 'btn btn-warning')

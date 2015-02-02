@@ -1,0 +1,25 @@
+.hero-unit
+  %h1 Photos
+  %p= link_to("Add new photo", { :action => "new" }, :class => 'btn btn-mini btn-primary')
+  %p{:style => "text-align: right;"}= "Photo count: #{@photos.count}"
+
+  %table.table.table-striped
+    %tr.info
+      %th Position
+      %th Name
+      %th Visible
+      %th Photo
+      %th Desription
+      %th Actions
+    - @photos.each do |photo|
+      %tr
+        %td= photo.position
+        %td= photo.name
+        %td.center= visible_status(photo.visible)
+        %td= image_tag(photo.photo.url(:thumb))
+        %td= truncate(photo.description, :lenght => 100, :omission => '[...]')
+        %td
+          =link_to("Show", {:action => "show", :id => photo.id}, :class => 'btn btn-xs btn-default')
+          =link_to("Edit", {:action => "edit", :id => photo.id}, :class => 'btn btn-xs btn-primary')
+          =link_to("Destroy", {:action => "destroy", :id => photo.id}, :class => 'btn btn-xs btn-danger')
+

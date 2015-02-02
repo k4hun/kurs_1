@@ -1,0 +1,29 @@
+.hero-unit 
+  %h1= @photo.name
+
+  %table.table.striped
+    %tr
+      %th Name
+      %td= @photo.name
+    %tr
+      %th Position
+      %td= @photo.position
+    %tr
+      %th Gallery
+      %td= @photo.gallery.name
+    %tr
+      %th Desription
+      %td= @photo.description
+    %tr
+      %th Is visible
+      %td= @photo.visible ? "Yes" : "No"
+    %tr
+      %th Photo:
+      %td= image_tag(@photo.photo)
+    %tr
+      %th Created at
+      %td= @photo.created_at
+    %tr
+      %th Updated at
+      %td= @photo.updated_at
+  %p{:style => 'text-align: center;'}= link_to("Back", { :action => "index" }, :class => 'btn btn-primary')

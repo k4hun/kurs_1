@@ -1,0 +1,15 @@
+= error(@gallery)
+
+%table.table    
+  %tr
+    %th= f.label(:name)
+    %td= f.text_field(:name, :class => 'form-control')
+  %tr
+    %th= f.label(:description)
+    %td= f.text_area(:description, :class => 'form-control')
+  %tr
+    %th= f.label(:position)
+    %td= f.select(:position, 1..@counter, :class => 'form-control')
+  %tr
+    %th= f.label(:is_visible)
+    %td= f.check_box(:visible)

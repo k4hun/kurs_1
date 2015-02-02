@@ -1,0 +1,25 @@
+= error(@photo)
+
+%table.table   
+  %tr
+    %th= f.label(:gallery_id, 'Gallery')
+    %td= f.select(:gallery_id, @gal.map{|x| [x.name, x.id]}, :class => 'form-control') 
+  %tr
+    %th= f.label(:name)
+    %td= f.text_field(:name, :class => 'form-control')
+  %tr
+    %th= f.label(:description)
+    %td= f.text_area(:description, :class => 'form-control')
+  %tr
+    %th= f.label(:position)
+    %td= f.select(:position, 1..@counter, :class => 'form-control')
+  %tr
+    %th= f.label(:is_visible)
+    %td= f.check_box(:visible)
+  -if !@photo.photo.blank?
+    %tr
+      %th Photo:
+      %td= image_tag(@photo.photo)
+  %tr
+    %th= f.label(:photo)
+    %td= f.file_field(:photo)
