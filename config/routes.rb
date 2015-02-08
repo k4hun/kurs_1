@@ -1,34 +1,6 @@
 Rails.application.routes.draw do
 
-  get 'photos/index'
-
-  get 'photos/new'
-
-  get 'photos/show'
-
-  get 'photos/edit'
-
-  get 'galleries/index'
-
-  get 'galleries/new'
-
-  get 'galleries/show'
-
-  get 'galleries/edit'
-
   get 'admin', :to => "access#index"
-
-  #resources 'pages'  
-  get 'pages/index'
-  get 'pages/new'
-  get 'pages/edit'
-  get 'pages/destroy'
-
-  #resources 'articles'
-  get 'articles/index'
-  get 'articles/new'
-  get 'articles/edit'
-  get 'articles/destroy'
 
   root 'categories#index'
 

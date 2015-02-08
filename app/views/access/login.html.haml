@@ -1,2 +1,12 @@
-%h1 Access#login
-%p Find me in app/views/access/login.html.haml
+.login
+  = form_tag(:action => 'log') do
+    %table
+      %tr
+        %td= label_tag(:user)
+        %td= text_field_tag(:user)
+      %tr
+        %td= label_tag(:password)
+        %td= password_field_tag(:password)
+      %tr
+        %td &nbsp;
+        %td= submit_tag("Log in")
