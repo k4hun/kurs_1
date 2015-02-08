@@ -1,0 +1,22 @@
+-@page_title = "Main Page"
+.header-image
+  .headline
+    .container
+      %h2 Welcome to
+      %h1 My test page
+
+.container
+  .row
+    - @articles.each do |article|
+      .col-lg-4
+        = image_tag(article.photo.url(:thumb), :class => 'img-circle')
+        %h2= article.name
+        %p= truncate(article.content, :length => 200, :omission => '[...]')
+        %p= link_to("Show article >> ", {:action => "news", :article_id => article.id}, :class => 'btn btn-default')
+  %hr.featurette-divider
+  .row
+    - @galleries.each do |gallery|
+      .col-lg-4
+        %h2.featurette-heading= gallery.name
+        %p= truncate(gallery.description, :length => 200, :omission => '[...]')
+        %p= link_to("Show gallery >> ", {:action => "galleries", :gallery_id => gallery.id}, :class => 'btn btn-default')

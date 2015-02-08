@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'admin', :to => "access#index"
 
-  root 'categories#index'
+  root 'public#index'
 
   match ':controller(/:action(/:id))', :via => [:get, :post]
 

@@ -1,0 +1,19 @@
+!!!
+%html
+  %head
+    %title
+      Rails course
+      ='| '+ @page_title if @page_title
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    %meta{:name => 'viewport', :content => 'width-device-width, initial-scale=1.0'}
+  %body
+    =render(:partial => 'menu')
+
+    .content
+      =yield
+
+    #footer
+      .container
+        %p.text-muted
+          Footer test
