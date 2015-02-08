@@ -13,6 +13,7 @@ class PublicController < ApplicationController
   end
 
   def galleries
+    @gallery = Gallery.find(params[:gallery_id])
   end
 
   def categories

@@ -1,2 +1,22 @@
-%h1 Public#galleries
-%p Find me in app/views/public/galleries.html.haml
+-@page_title = @gallery.name
+
+.container
+  %h2= @gallery.name
+  .row
+    .col-md-8
+      = @gallery.description
+      %hr
+      %p= link_to("<< back", {:controller => 'public', :action => 'index'}, :class => 'btn btn-default')
+    .col-md-4
+      missing photo ;s
+
+  .container
+    - @gallery.photos.visible.each_slice(3) do |photo|
+      .row
+        - photo.each do |ph|
+          .col-md-4    
+            .example-image-link
+              %a{:href => ph.photo.url, 'data-lightbox' => 'example-set', :title => ph.description}
+                = image_tag(ph.photo.url(:thumb), :class => 'img-thumbnail')
+              %br
+              = ph.name
