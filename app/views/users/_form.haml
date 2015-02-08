@@ -1,0 +1,21 @@
+= error(@user)
+
+%table.table.table-striped  
+  %tr
+    %th= f.label(:firstname, 'First name')
+    %td= f.text_field(:firstname, :class => 'form-control')  
+  %tr
+    %th= f.label(:lastname, 'Last name')
+    %td= f.text_field(:lastname, :class => 'form-control')
+  %tr
+    %th= f.label(:user, 'User name')
+    %td= f.text_field(:user, :class => 'form-control')
+  %tr
+    %th= f.label(:email)
+    %td= f.text_field(:email, :class => 'form-control')
+  %tr
+    %th= f.label(:password)
+    %td= f.password_field(:password, :class => 'form-control')
+  %tr
+    %th= f.label(:password_confirmation)
+    %td= f.password_field(:password_confirmation, :class => 'form-control')

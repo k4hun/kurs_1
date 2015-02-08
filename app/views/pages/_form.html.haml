@@ -1,4 +1,4 @@
-%table.table.striped
+%table.table.table-striped
   %tr
     %th= f.label(:category_id, 'Category')
     %td= f.select(:category_id, @cat.map{|x| [x.name, x.id]}, :class => 'form-control')

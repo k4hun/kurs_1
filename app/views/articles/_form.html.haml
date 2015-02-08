@@ -1,6 +1,6 @@
 = error(@article)
 
-%table.table  
+%table.table.table-striped  
   %tr
     %th= f.label(:page_id, 'Page')
     %td= f.select(:page_id, @pag.map{|x| [x.name, x.id]}, :class => 'form-control')

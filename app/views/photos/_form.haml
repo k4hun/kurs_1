@@ -1,6 +1,6 @@
 = error(@photo)
 
-%table.table   
+%table.table.table-striped
   %tr
     %th= f.label(:gallery_id, 'Gallery')
     %td= f.select(:gallery_id, @gal.map{|x| [x.name, x.id]}, :class => 'form-control') 
