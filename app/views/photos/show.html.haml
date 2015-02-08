@@ -21,9 +21,12 @@
       %th Photo:
       %td= image_tag(@photo.photo)
     %tr
+      %th Thumbnail:
+      %td= image_tag(@photo.photo.url(:thumb))
+    %tr
       %th Created at
       %td= @photo.created_at
     %tr
       %th Updated at
       %td= @photo.updated_at
-  %p{:style => 'text-align: center;'}= link_to("Back", { :action => "index" }, :class => 'btn btn-primary')
+  %p{:style => 'text-align: center;'}= link_to("Back", { :action => "index", :gallery_id => @gallery.id }, :class => 'btn btn-primary')

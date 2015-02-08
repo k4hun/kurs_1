@@ -1,2 +1,7 @@
-%h1 Photos#edit
-%p Find me in app/views/photos/edit.html.haml
+.hero-unit
+  %h1= @photo.name
+  = form_for(:photo, :url => { :action => "update", :id => @photo.id, :gallery_id => @gallery.id }) do |f| 
+    = render(:partial => 'form', :locals => {:f => f})
+    %p{:style => 'text-align: center;'}
+      = f.submit(:Update, :class => 'btn btn-primary')
+      = link_to("Back", { :action => "index", :gallery_id => @gallery.id }, :class => 'btn btn-warning')

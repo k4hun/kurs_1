@@ -8,13 +8,16 @@
       %th Position
       %th Name
       %th Visible 
+      %th Photos in gallery 
       %th Actions
     - @galleries.each do |gallery|
       %tr
         %td= gallery.position
         %td= gallery.name
         %td.center= visible_status(gallery.visible)
+        %td= gallery.photos.size
         %td
+          =link_to("Photos", {:controller => "photos", :gallery_id => gallery.id}, :class => 'btn btn-xs btn-success')
           =link_to("Show", {:action => "show", :id => gallery.id}, :class => 'btn btn-xs btn-default')
           =link_to("Edit", {:action => "edit", :id => gallery.id}, :class => 'btn btn-xs btn-primary')
           =link_to("Destroy", {:action => "destroy", :id => gallery.id}, :class => 'btn btn-xs btn-danger')

@@ -1,6 +1,7 @@
 .hero-unit
+  =link_to("<< Back to galleries", {:controller => 'galleries', :action => 'index'}, :class => 'btn btn-xs btn-default')
   %h1 Photos
-  %p= link_to("Add new photo", { :action => "new" }, :class => 'btn btn-mini btn-primary')
+  %p= link_to("Add new photo", { :action => "new", :gallery_id => @gallery.id }, :class => 'btn btn-mini btn-primary')
   %p{:style => "text-align: right;"}= "Photo count: #{@photos.count}"
 
   %table.table.table-striped
@@ -19,7 +20,7 @@
         %td= image_tag(photo.photo.url(:thumb))
         %td= truncate(photo.description, :lenght => 100, :omission => '[...]')
         %td
-          =link_to("Show", {:action => "show", :id => photo.id}, :class => 'btn btn-xs btn-default')
-          =link_to("Edit", {:action => "edit", :id => photo.id}, :class => 'btn btn-xs btn-primary')
-          =link_to("Destroy", {:action => "destroy", :id => photo.id}, :class => 'btn btn-xs btn-danger')
+          =link_to("Show", {:action => "show", :id => photo.id, :gallery_id => @gallery.id }, :class => 'btn btn-xs btn-default')
+          =link_to("Edit", {:action => "edit", :id => photo.id, :gallery_id => @gallery.id }, :class => 'btn btn-xs btn-primary')
+          =link_to("Destroy", {:action => "destroy", :id => photo.id, :gallery_id => @gallery.id }, :class => 'btn btn-xs btn-danger')
 

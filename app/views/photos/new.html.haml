@@ -1,8 +1,8 @@
 .hero-unit
   %h1 New article
 
-  = form_for(:photo, :url => { :action => "create" }) do |f| 
+  = form_for(:photo, :url => { :action => "create", :gallery_id => @gallery.id }) do |f| 
     = render(:partial => 'form', :locals => {:f => f})
     %p{:style => 'text-align: center;'}
       =f.submit(:Create, :class => 'btn btn-primary')
-      = link_to("Back", { :action => "index" }, :class => 'btn btn-warning')
+      = link_to("Back", { :action => "index", :gallery_id => @gallery.id }, :class => 'btn btn-warning')
