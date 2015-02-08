@@ -20,4 +20,4 @@
     %tr
       %th Updated at
       %td= @page.updated_at
-  %p{:style => 'text-align: center;'}= link_to("Back", { :action => "index" }, :class => 'btn btn-primary')
+  %p{:style => 'text-align: center;'}= link_to("Back", { :action => "index" , :category_id => @category.id}, :class => 'btn btn-primary')

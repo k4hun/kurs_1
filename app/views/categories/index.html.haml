@@ -17,6 +17,7 @@
         %td.center= visible_status(category.visible)
         %td.center= category.pages.count
         %td
+          =link_to("Pages", {:controller => 'pages', :category_id => category.id}, :class => 'btn btn-xs btn-success')
           =link_to("Show", {:action => "show", :id => category.id}, :class => 'btn btn-xs btn-default')
           =link_to("Edit", {:action => "edit", :id => category.id}, :class => 'btn btn-xs btn-primary')
           =link_to("Destroy", {:action => "destroy", :id => category.id}, :class => 'btn btn-xs btn-danger')

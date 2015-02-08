@@ -1,7 +1,7 @@
 .hero-unit
   %h1= @page.name
-  = form_for(:page, :url => { :action => "update", :id => @page.id }) do |f| 
+  = form_for(:page, :url => { :action => "update", :id => @page.id , :category_id => @category.id}) do |f| 
     = render(:partial => 'form', :locals => {:f => f})
     %p{:style => 'text-align: center;'}
       = f.submit(:Update, :class => 'btn btn-primary')
-      = link_to("Back", { :action => "index" }, :class => 'btn btn-warning')
+      = link_to("Back", { :action => "index", :category_id => @category.id }, :class => 'btn btn-warning')
