@@ -1,2 +1,7 @@
-%h1 Public#categories
-%p Find me in app/views/public/categories.html.haml
+-@page_title = "Categories"
+
+.container
+  .row
+    %h2= "Pages in category: #{@category.name}"
+    - @category.pages.visible.sort.each do |page|
+      = link_to(page.name, {:action => 'pages', :page_id => page.id}, :class => 'btn btn-default btn-lg btn-block')

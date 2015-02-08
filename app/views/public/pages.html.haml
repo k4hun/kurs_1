@@ -1,2 +1,22 @@
-%h1 Public#pages
-%p Find me in app/views/public/pages.html.haml
+-@page_title = @page.name
+
+.container
+  .row
+    %h2= @page.name
+    - lp=1
+    - @page.articles.visible.sort.each do |article|
+      -if lp%2 == 0
+        .col-md-8
+          %p= article.content
+        .col-md-4
+          = image_tag(article.photo.url, :class => 'featurette-image img-responsive')
+        %hr.col-md-12
+      -else
+        .col-md-4
+          = image_tag(article.photo.url, :class => 'featurette-image img-responsive')
+        .col-md-8
+          %p= article.content
+        %hr.col-md-12
+      - lp+=1
+  = link_to("<< back", {:action => 'categories', :category_id => @page.category.id}, :class => 'btn btn-default')
+

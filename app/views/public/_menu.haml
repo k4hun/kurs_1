@@ -17,7 +17,7 @@
               %ul.dropdown-menu
                 - gallery_menu   = Gallery.where(:visible => true).last(10)
                 - gallery_menu.each do |gallery| 
-                  %li= link_to(gallery.name, {:action => 'gallery', :gallery_id => gallery.id})
+                  %li= link_to(gallery.name, {:action => 'galleries', :gallery_id => gallery.id})
                              
             %li.dropdown
               %a.dropdown-toggle{:href=>"#", 'data-toggle'=>"dropdown"} 
@@ -26,4 +26,4 @@
               %ul.dropdown-menu
                 - menu_category   = Category.where(:visible => true).last(10)
                 - menu_category.each do |category|
-                  %li= link_to(category.name, {:action => 'Category', :category_id => category.id})
+                  %li= link_to(category.name, {:action => 'categories', :category_id => category.id})

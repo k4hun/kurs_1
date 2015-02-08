@@ -1,2 +1,11 @@
-%h1 Public#news
-%p Find me in app/views/public/news.html.haml
+-@page_title = @article.name
+
+.container
+  %h2= @article.name
+  .row
+    .col-md-8
+      %p= @article.content
+      %hr
+      = link_to("<< back", {:action => 'index'}, :class => 'btn btn-default')
+    .col-md-4
+      = image_tag(@article.photo.url, :class => 'featurette-image img-responsive')

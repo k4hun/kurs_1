@@ -1,2 +1,7 @@
-%h1 Public#articles
-%p Find me in app/views/public/articles.html.haml
+-@page_title = 'Recent pages'
+
+.container
+  .row
+    %h2 Page Index (10 pages):
+    - @pages_menu.each do |page|
+      = link_to(page.name, {:action => 'pages', :page_id => page.id}, :class => 'btn btn-default btn-lg btn-block')

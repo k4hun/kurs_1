@@ -9,17 +9,21 @@ class PublicController < ApplicationController
   end
 
   def articles
+    @pages_menu = Page.where(:visible => true).last(10)
   end
 
   def galleries
   end
 
   def categories
+    @category = Category.find(params[:category_id])
   end
 
   def news
+    @article = Article.find(params[:article_id])
   end
 
   def pages
+    @page = Page.find(params[:page_id])
   end
 end
