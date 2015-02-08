@@ -48,11 +48,14 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def current_category
+    current_category = Category.find(params[:id])
+  end
+
+private
   def category_params
     params.require(:category).permit(:name, :position, :visible)
   end
 
-  def current_category
-    current_category = Category.find(params[:id])
-  end
+  
 end
