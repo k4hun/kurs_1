@@ -1,6 +1,7 @@
 .hero-unit
+  =link_to("<< Back to pages", {:controller => 'pages', :action => 'index', :category_id => @page.category.id}, :class => 'btn btn-xs btn-default')
   %h1 Articles
-  %p= link_to("Add new article", { :action => "new" }, :class => 'btn btn-mini btn-primary')
+  %p= link_to("Add new article", { :action => "new", :page_id => @page.id}, :class => 'btn btn-mini btn-primary')
   %p{:style => "text-align: right;"}= "Article count: #{@articles.count}"
 
   %table.table.table-striped
@@ -17,7 +18,7 @@
         %td.center= visible_status(article.visible)
         %td= article.page.name
         %td
-          =link_to("Show", {:action => "show", :id => article.id}, :class => 'btn btn-xs btn-default')
-          =link_to("Edit", {:action => "edit", :id => article.id}, :class => 'btn btn-xs btn-primary')
-          =link_to("Destroy", {:action => "destroy", :id => article.id}, :confirm => "Are you sure you want to do that?", :class => 'btn btn-xs btn-danger')
+          =link_to("Show", {:action => "show", :id => article.id, :page_id => @page.id}, :class => 'btn btn-xs btn-default')
+          =link_to("Edit", {:action => "edit", :id => article.id, :page_id => @page.id}, :class => 'btn btn-xs btn-primary')
+          =link_to("Destroy", {:action => "destroy", :id => article.id, :page_id => @page.id}, :confirm => "Are you sure you want to do that?", :class => 'btn btn-xs btn-danger')
 

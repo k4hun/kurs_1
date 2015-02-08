@@ -20,6 +20,7 @@
         %td.center= page.articles.size
         %td= page.category.name
         %td
+          =link_to("Articles", {:controller => 'articles', :page_id => page.id}, :class => 'btn btn-xs btn-success')
           =link_to("Show", {:action => "show", :id => page.id, :category_id => @category.id}, :class => 'btn btn-xs btn-default')
           =link_to("Edit", {:action => "edit", :id => page.id, :category_id => @category.id}, :class => 'btn btn-xs btn-primary')
           =link_to("Destroy", {:action => "destroy", :id => page.id, :category_id => @category.id}, :class => 'btn btn-xs btn-danger')
